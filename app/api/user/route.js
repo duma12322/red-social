@@ -2,7 +2,8 @@ import User from "@lib/models/User";
 import { connectToDB } from "@lib/mongodb/mongoose";
 
 export const GET = async (req, { params }) => {
-  const { query } = params;
+  // Verificar si 'query' está presente en los parámetros
+  const { query } = params || {};
 
   try {
     await connectToDB();

@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
-import { sidebarLinks } from "@/constants";
-import { usePathname } from "next/navigation";
+import { sidebarLinks } from "@constants";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Menu = () => {
   const pathname = usePathname();
+
   return (
     <div className="flex flex-col gap-2">
       {sidebarLinks.map(link => {

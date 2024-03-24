@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
-import { sidebarLinks } from "@/constants";
-import { usePathname } from "next/navigation";
+import { sidebarLinks } from "@constants";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-const ButtomBar = () => {
+const BottomBar = () => {
   const pathname = usePathname();
+
   return (
     <div className="sticky flex bottom-0 z-20 w-full bg-dark-1 px-6 py-3 items-center justify-between md:hidden">
       {sidebarLinks.map(link => {
@@ -21,7 +21,7 @@ const ButtomBar = () => {
           >
             {link.icon}{" "}
             <p className="text-small-medium text-light-1 max-sm:hidden">
-              {link.label}
+              {link.label.split(/\s+/)[0]}
             </p>
           </Link>
         );
@@ -30,4 +30,4 @@ const ButtomBar = () => {
   );
 };
 
-export default ButtomBar;
+export default BottomBar;
